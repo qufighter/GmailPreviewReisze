@@ -1,0 +1,18 @@
+{
+   "content_scripts": [ {
+      "js": [ "resize.user.js" ],
+      "run_at": "document_idle",
+      "all_frames" : true,
+      "matches": [ "http://mail.google.com/mail/*", "https://mail.google.com/mail/*" ]
+   } ],
+   "description": "Enlarges Gmail Previews provided by Gmail Labs 'Message Sneak Peek' feature",
+   "name": "Resize and Scroll 'Message Sneak Peek' Gmail Labs",
+   "icons": { "16": "icon16.png",
+           "32": "icon32.png",
+           "48": "icon48.png",
+          "128": "icon128.png" },
+   "permissions": [
+				  "http://vidzbigger.com/","http://www.vidzbigger.com/","tabs"
+				],
+   "version": "0.0.1.0"
+}
