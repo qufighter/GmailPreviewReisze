@@ -27,9 +27,9 @@ function getScroll(){
 }
 
 function ssr(){
-	document.getElementsByClassName('yo')[0].style.width='auto';
 	elm = document.getElementsByClassName('yp')[0]
 	elm.style.width=elm.clientWidth+'px';
+	document.getElementsByClassName('yo')[0].style.width='auto';
 	sizenode=elm
 }
 function ssm(){
@@ -37,6 +37,7 @@ function ssm(){
 }
 
 function chk(){
+	if(ismoving)return;
 	window.setTimeout(function(){
 		el=document.getElementsByClassName('yp');
 		if(el.length> 0) el=el[0];
@@ -118,8 +119,12 @@ function domove(ev){
 		ismoving=false;
 	}
 	
-	chk();
+	//chk();
 }
 
+cbody=document.getElementsByClassName('cP');
+if(cbody.length > 0 ){
+	cbody[0].addEventListener('DOMSubtreeModified',chk,false)
+}
 window.addEventListener('mousemove',domove,false)
 window.addEventListener('mouseup',function(){sizenode=false;movenode=false;},false)
