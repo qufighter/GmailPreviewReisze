@@ -119,12 +119,12 @@ function domove(ev){
 		ismoving=false;
 	}
 	
-	//chk();
+	chk();
 }
 
-cbody=document.getElementsByClassName('cP');
-if(cbody.length > 0 ){
-	cbody[0].addEventListener('DOMSubtreeModified',chk,false)
-}
+//cbody=document.getElementsByClassName('cP');
+//if(cbody.length > 0 ){
+//	cbody[0].addEventListener('DOMSubtreeModified',chk,false)
+//}
 window.addEventListener('mousemove',domove,false)
 window.addEventListener('mouseup',function(){sizenode=false;movenode=false;},false)
