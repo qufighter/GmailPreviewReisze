@@ -78,14 +78,18 @@ function chk(){
 			//var bar = document.getElementsByClassName('yz')[0]
 			//bar.addEventListener('mousedown',ssm,false);
 			//bar.setAttribute('style','-webkit-user-select: none;-moz-user-select: none;cursor:move;');
-	
-			document.getElementsByClassName('yp')[0].style.overflow='scroll';
-			document.getElementsByClassName('yp')[0].style.overflowX='hidden';
-			document.getElementsByClassName('yp')[0].style.marginRight='-18px';
+			
+			
+			var displa=document.getElementsByClassName('yp')[0];
+			displa.style.overflow='auto';
+			displa.style.overflowX='hidden';
+			//console.log(navigator.userAgent + '=' + new String(navigator.userAgent).indexOf('Chrome/'));
+			if(new String(navigator.userAgent).indexOf('Chrome/')>0){
+				displa.style.marginRight='-18px';
+			}
 			//window.removeEventListener('mousemove',domove,false)
 			//window.addEventListener('mousemove',domove,false)
 
-			console.log(document.getElementsByClassName('Wx').length);
 			document.getElementsByClassName('Wx')[0].addEventListener('click',resetScroll,false);
 			
 			sizeSet()
